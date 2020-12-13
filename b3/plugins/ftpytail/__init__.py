@@ -324,7 +324,7 @@ class FtpytailPlugin(b3.plugin.Plugin):
         d = os.path.dirname(self.url_path)
         self.debug('trying to cwd to [%s]' % d)
         ftp.cwd(d)
-        self.console.clients.sync()
+        # self.console.clients.sync()    -   AceDev: "throws exception on connect. ('NoneType' object has no attribute 'iteritems') commenting out solves issue for me."
         return ftp
     
     
